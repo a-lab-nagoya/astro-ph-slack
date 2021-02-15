@@ -18,8 +18,8 @@ jobs:
       - name: Run astro-ph
         run: |
           astro-ph slack \
-            --date_start $(gdate -I --date '2 days ago') \
-            --date_end $(gdate -I --date '1 day ago') \
+            --date_start $(date -I --date '2 days ago') \
+            --date_end $(date -I --date '1 day ago') \
             --keywords galaxy,galaxies \
             --categories astro-ph.GA,astro-ph.IM \
             --lang_from en \
