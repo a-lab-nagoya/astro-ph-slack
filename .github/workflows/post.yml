@@ -1,0 +1,27 @@
+name: Post
+
+on:
+  schedule:
+    - cron: '50 0 * * 1,2,3,4,5'
+  workflow_dispatch:
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: pip install astro-ph
+      - name: Run astro-ph
+        run: |
+          astro-ph slack \
+            --date_start $(gdate -I --date '2 days ago') \
+            --date_end $(gdate -I --date '1 day ago') \
+            --keywords galaxy,galaxies \
+            --categories astro-ph.GA,astro-ph.IM \
+            --lang_from en \
+            --lang_to ja \
+            --webhook_url ${{ secrets.SLACK_WEBHOOK_URL }}
