@@ -19,7 +19,7 @@ jobs:
         run: |
           astro-ph slack \
             --date_start $(date -I --date '3 days ago') \
-            --date_end $(date -I --date '2 day2 ago') \
+            --date_end $(date -I --date '2 days ago') \
             --keywords '' \
             --categories astro-ph.GA \
             --lang_from en \
@@ -38,7 +38,7 @@ jobs:
         run: |
           astro-ph slack \
             --date_start $(date -I --date '3 days ago') \
-            --date_end $(date -I --date '2 day ago') \
+            --date_end $(date -I --date '2 days ago') \
             --keywords '' \
             --categories astro-ph.IM \
             --lang_from en \
