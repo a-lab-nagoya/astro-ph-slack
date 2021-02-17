@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  astro-ph.GA:
+  astro-ph-GA:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,7 +25,7 @@ jobs:
             --lang_from en \
             --lang_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_GA }}
-  astro-ph.IM:
+  astro-ph-IM:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
