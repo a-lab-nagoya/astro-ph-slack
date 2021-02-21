@@ -9,38 +9,27 @@ jobs:
   astro-ph-GA:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
       - name: Install dependencies
         run: pip install astro-ph
       - name: Post articles to Slack
         run: |
           astro-ph slack \
-            --date_start $(date -I --date '3 days ago') \
-            --date_end $(date -I --date '2 days ago') \
-            --keywords '' \
             --categories astro-ph.GA \
-            --lang_from en \
             --lang_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_GA }}
+            --debug
   astro-ph-IM:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
       - name: Install dependencies
         run: pip install astro-ph
       - name: Post articles to Slack
         run: |
           astro-ph slack \
-            --date_start $(date -I --date '3 days ago') \
-            --date_end $(date -I --date '2 days ago') \
-            --keywords '' \
             --categories astro-ph.IM \
-            --lang_from en \
             --lang_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_IM }}
+            --debug
