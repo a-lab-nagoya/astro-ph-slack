@@ -2,7 +2,7 @@ name: Post
 
 on:
   schedule:
-    - cron: '0 1 * * 1,2,3,4,5'
+    - cron: '0 1 * * 1,2,3,4,5' # runs at 10:00 JST on weekdays
   workflow_dispatch:
 
 jobs:
