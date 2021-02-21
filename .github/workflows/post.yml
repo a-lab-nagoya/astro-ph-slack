@@ -15,7 +15,6 @@ jobs:
       - name: Post articles to Slack
         run: |
           astro-ph slack \
-            --date_start $(date -I --date '3 days ago') \
             --categories astro-ph.GA \
             --lang_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_GA }} \
@@ -29,7 +28,6 @@ jobs:
       - name: Post articles to Slack
         run: |
           astro-ph slack \
-            --date_start $(date -I --date '3 days ago') \
             --categories astro-ph.IM \
             --lang_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_IM }} \
