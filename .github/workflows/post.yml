@@ -11,14 +11,12 @@ jobs:
     steps:
       - uses: actions/setup-python@v2
       - name: Install dependencies
-        run: pip install astro-ph
+        run: pip install astro-ph==0.3.0
       - name: Post articles to Slack
         run: |
           astro-ph slack \
-            --date_start $(date -I --date '3 days ago') \
-            --date_end $(date -I --date '2 days ago') \
             --categories astro-ph.GA \
-            --lang_to ja \
+            --language_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_GA }} \
             --debug
   astro-ph-IM:
@@ -26,13 +24,11 @@ jobs:
     steps:
       - uses: actions/setup-python@v2
       - name: Install dependencies
-        run: pip install astro-ph
+        run: pip install astro-ph==0.3.0
       - name: Post articles to Slack
         run: |
           astro-ph slack \
-            --date_start $(date -I --date '3 days ago') \
-            --date_end $(date -I --date '2 days ago') \
             --categories astro-ph.IM \
-            --lang_to ja \
+            --language_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_IM }} \
             --debug
