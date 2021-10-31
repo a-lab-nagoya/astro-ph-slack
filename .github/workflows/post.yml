@@ -12,15 +12,14 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.5.0
+          pip install arxiv-post==0.6.0
           playwright install chromium
       - name: Post articles to Slack
         run: |
           arxiv-post slack \
             --categories astro-ph.GA \
-            --language_to ja \
-            --webhook_url ${{ secrets.SLACK_WEBHOOK_GA }} \
-            --n_concurrent 2 \
+            --target_lang ja \
+            --slack_webhook_url ${{ secrets.SLACK_WEBHOOK_GA }} \
             --debug
   astro-ph-IM:
     runs-on: ubuntu-latest
@@ -28,13 +27,12 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.5.0
+          pip install arxiv-post==0.6.0
           playwright install chromium
       - name: Post articles to Slack
         run: |
           arxiv-post slack \
             --categories astro-ph.IM \
-            --language_to ja \
-            --webhook_url ${{ secrets.SLACK_WEBHOOK_IM }} \
-            --n_concurrent 2 \
+            --target_lang ja \
+            --slack_webhook_url ${{ secrets.SLACK_WEBHOOK_IM }} \
             --debug
