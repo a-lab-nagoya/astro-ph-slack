@@ -20,7 +20,9 @@ jobs:
             --categories astro-ph.GA \
             --language_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_GA }} \
-            --debug
+            --n_concurrent 2 \
+            --debug \
+            --dry_run
   astro-ph-IM:
     runs-on: ubuntu-latest
     steps:
@@ -35,4 +37,6 @@ jobs:
             --categories astro-ph.IM \
             --language_to ja \
             --webhook_url ${{ secrets.SLACK_WEBHOOK_IM }} \
-            --debug
+            --n_concurrent 2 \
+            --debug \
+            --dry_run
