@@ -37,3 +37,18 @@ jobs:
             --slack_webhook_url ${{ secrets.SLACK_WEBHOOK_URL_IM }} \
             --deepl_api_key ${{ secrets.DEEPL_API_KEY }} \
             --debug
+  astro-ph-HE:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+      - name: Install dependencies
+        run: |
+          pip install arxiv-post==0.6.1
+          playwright install chromium
+      - name: Post articles to Slack
+        run: |
+          arxiv-post slack \
+            --categories astro-ph.HE \
+            --target_lang ja \
+            --slack_webhook_url ${{ secrets.SLACK_WEBHOOK_URL_HE }} \
+            --debug
