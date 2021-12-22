@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  astro-ph-GA:
+  astro-ph-ga:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
@@ -21,7 +21,7 @@ jobs:
             --target_lang ja \
             --slack_webhook_url ${{ secrets.SLACK_WEBHOOK_URL_GA }} \
             --debug
-  astro-ph-IM:
+  astro-ph-im:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
@@ -37,7 +37,7 @@ jobs:
             --slack_webhook_url ${{ secrets.SLACK_WEBHOOK_URL_IM }} \
             --deepl_api_key ${{ secrets.DEEPL_API_KEY }} \
             --debug
-  astro-ph-HE:
+  astro-ph-he:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
