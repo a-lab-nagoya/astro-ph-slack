@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.6.3
+          pip install arxiv-post==0.6.4
           playwright install chromium
       - name: Post articles to Slack
         run: |
@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.6.3
+          pip install arxiv-post==0.6.4
           playwright install chromium
       - name: Post articles to Slack
         run: |
@@ -43,7 +43,7 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.6.3
+          pip install arxiv-post==0.6.4
           playwright install chromium
       - name: Post articles to Slack
         run: |
