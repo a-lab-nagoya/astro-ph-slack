@@ -1,4 +1,4 @@
-name: Post
+name: Posts
 
 on:
   schedule:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   astro-ph-ga:
+    name: Post (astro-ph.GA)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
@@ -22,6 +23,7 @@ jobs:
             --slack_webhook_url ${{ secrets.SLACK_WEBHOOK_URL_GA }} \
             --debug
   astro-ph-im:
+    name: Post (astro-ph.IM)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
@@ -38,6 +40,7 @@ jobs:
             --deepl_api_key ${{ secrets.DEEPL_API_KEY }} \
             --debug
   astro-ph-he:
+    name: Post (astro-ph.HE)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v2
