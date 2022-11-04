@@ -10,7 +10,9 @@ jobs:
     name: Post (astro-ph.GA)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
       - name: Install dependencies
         run: |
           pip install arxiv-post==0.6.4
@@ -26,7 +28,9 @@ jobs:
     name: Post (astro-ph.IM)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
       - name: Install dependencies
         run: |
           pip install arxiv-post==0.6.4
@@ -43,7 +47,9 @@ jobs:
     name: Post (astro-ph.HE)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
       - name: Install dependencies
         run: |
           pip install arxiv-post==0.6.4
