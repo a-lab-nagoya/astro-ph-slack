@@ -15,7 +15,7 @@ jobs:
           python-version: "3.10"
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.6.4
+          pip install arxiv-post==0.7.0
           playwright install chromium
       - name: Post articles to Slack
         run: |
@@ -33,7 +33,7 @@ jobs:
           python-version: "3.10"
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.6.4
+          pip install arxiv-post==0.7.0
           playwright install chromium
       - name: Post articles to Slack
         run: |
@@ -52,7 +52,7 @@ jobs:
           python-version: "3.10"
       - name: Install dependencies
         run: |
-          pip install arxiv-post==0.6.4
+          pip install arxiv-post==0.7.0
           playwright install chromium
       - name: Post articles to Slack
         run: |
